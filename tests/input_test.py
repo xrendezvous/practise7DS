@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas
 import os
 import pytest
 from app.io.input import read_file, read_file_pandas
@@ -52,7 +52,7 @@ def csv_file(tmpdir):
     Returns:
         Filepath to the created CSV file
     """
-    data = pd.DataFrame({
+    data = pandas.DataFrame({
         "Column1": ["row1", "row2"],
         "Column2": ["row1", "row2"],
     })
