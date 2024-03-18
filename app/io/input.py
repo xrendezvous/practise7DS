@@ -34,6 +34,13 @@ def read_file_pandas(filepath):
 
     Returns:
         DataFrame: content of the file
+
+    Raises:
+        EmptyDataError: if DataFrame is empty or doesn't exists
     """
-    return pandas.read_csv(filepath)
+    try:
+        print('DataFrame file:')
+        return pandas.read_csv(filepath)
+    except pandas.errors.EmptyDataError:
+        return pandas.DataFrame()
 
