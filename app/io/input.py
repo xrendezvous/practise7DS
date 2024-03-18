@@ -1,4 +1,5 @@
 import pandas
+import os
 
 
 def input_text():
@@ -36,8 +37,11 @@ def read_file_pandas(filepath):
         DataFrame: content of the file
 
     Raises:
-        EmptyDataError: if DataFrame is empty or doesn't exists
+        EmptyDataError: if DataFrame is empty or doesn't exist
     """
+    if not os.path.exists(filepath):
+        print('DataFrame file does not exist.')
+        return pandas.DataFrame()
     try:
         print('DataFrame file:')
         return pandas.read_csv(filepath)
